@@ -15,6 +15,10 @@ html {
 
 
 #header {
+    position: fixed ;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 46px;
     background-color: #000;
 }
@@ -92,11 +96,31 @@ html {
     line-height: 46px;
 }
 
-#silder {
-    
+#slider {
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('/F1/assets/img/Slider/slider1.jpg') top center / cover no-repeat;
 }
 
-   
+#slider .text-content {
+    position: relative ;
+    bottom: 47px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+#slider .text-heading {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+#slider .text-description {
+    font-size: 15px;
+    margin-top: 40px;
+
+}
 
 
 #content {
