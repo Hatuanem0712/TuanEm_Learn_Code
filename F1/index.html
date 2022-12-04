@@ -59,16 +59,16 @@
                 <p class="about-text">
                     We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-                <div class="member-list">
-                    <div class="member-item">
+                <div class="row member-list">
+                    <div class="col col-third member-item text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/team/bandmember.jpeg" alt="Name" class="member-img">
                     </div>
-                    <div class="member-item">
+                    <div class="col col-third text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/team/bandmember.jpeg" alt="Name" class="member-img">
                     </div>
-                    <div class="member-item">
+                    <div class="col col-third text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/team/bandmember.jpeg" alt="Name" class="member-img">
                     </div>
@@ -94,8 +94,8 @@
                     </ul>
 
                     <!-- Places -->
-                    <div class="place-list">
-                        <div class="place-item">
+                    <div class="row place-list">
+                        <div class="col col-third">
                             <img src="/F1/assets/img/tour places/newyork.jpeg" alt="New York" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">New York</h3>
@@ -104,7 +104,7 @@
                                 <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
-                        <div class="place-item">
+                        <div class="col col-third">
                             <img src="/F1/assets/img/tour places/paris.jpeg" alt="Paris" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">Paris</h3>
@@ -112,7 +112,7 @@
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
                                 <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
                             </div>
-                        </div><div class="place-item">
+                        </div><div class="col col-third">
                             <img src="/F1/assets/img/tour places/sanfran.jpeg" alt="San Francisco" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">San Francisco</h3>
@@ -145,9 +145,9 @@
 
     </div>
 
-    <div class="modal">
-        <div class="modal-container">
-            <div class="modal-close">
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
                 <i class="ti-close"></i>
             </div>
 
@@ -187,16 +187,29 @@
     <!-- Script -->
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
-        const modal = document.querySelector('.modal')
+        const modal = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
+        const modalClose = document.querySelector('.js-modal-close')
 
         function showBuyTickets() {
             modal.classList.add('open')
         }
 
+        function hideBuyTickets() {
+            modal.classList.remove('open')
+        }
 
         for (const buyBtn of buyBtns) {
-            buyBtn.addEventListener('click',showBuyTickets)
+            buyBtn.addEventListener('click', showBuyTickets)
         }
+
+        modalClose.addEventListener('click', hideBuyTickets)
+
+        modal.addEventListener('click', hideBuyTickets)
+
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation()
+        })
     </script>
     
 </body>

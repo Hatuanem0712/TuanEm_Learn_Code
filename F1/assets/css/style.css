@@ -9,6 +9,7 @@ html {
     font-family: Arial, Helvetica, sans-serif ;
 }
 
+/* Common */
 .clear {
     clear: both;
 }
@@ -17,6 +18,31 @@ html {
     color: #fff !important;
 }
 
+.text-center {
+    text-align: center !important;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col {
+    float: left;
+    padding-left: 8px ;
+    padding-right: 8px;
+}
+
+.col-third {
+    width: 33.3333333%;
+}
+
+.col-half {
+    width: 50%;
+}
+
+
+ /* Main */
 #main {
 
 }
@@ -171,14 +197,7 @@ html {
 }
 
 #content .member-list {
-    padding-top: 48px;
-    overflow: hidden;
-}
-
-#content .member-item {
-    float: left;
-    width: 33.333333333%;
-    text-align: center;
+    margin-top: 48px;
 }
 
 #content .member-name {
@@ -232,14 +251,8 @@ html {
 /* Places */
 
 .place-list {
-    margin: 32px -8px 48px;
-}
-
-.place-item {
-    float: left;
-    width: 33.333333333%;
-    padding: 0 8px;
-
+    margin-top: 32px;
+    margin-bottom: 48px;
 }
 
 .place-img {
@@ -310,6 +323,7 @@ html {
     max-width: calc(100%-36px);
     min-height: 200px;
     position: relative ;
+    animation: modalFadein ease 0.5s;
 }
 
 .modal-header {
@@ -381,6 +395,16 @@ html {
     color: #2196f3;
 }
 
+@keyframes modalFadein {
+    from {
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Footer */
 
