@@ -9,6 +9,16 @@ html {
     font-family: Arial, Helvetica, sans-serif ;
 }
 
+.column {
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .column {
+        width: 50%;
+    }
+}
+
 /* Common */
 .clear {
     clear: both;
@@ -59,6 +69,9 @@ html {
     width: 100%;
 }
 
+.pull-right {
+    float: right !important;
+}
 
 
 
@@ -178,8 +191,6 @@ html {
 }
 
 
-
-
 /* Content */
 
 #content {
@@ -188,7 +199,7 @@ html {
 
 #content .content-section {
     width: 800px;
-    padding: 64px 0;
+    padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto ;
 }
@@ -272,7 +283,6 @@ html {
 
 .place-list {
     margin-top: 32px;
-    margin-bottom: 48px;
 }
 
 .place-img {
@@ -312,12 +322,14 @@ html {
     padding: 11px 16px;
     display: inline-block;
     margin-top: 15px;
+    border: none;
 }
 
 .btn:hover {
+    cursor: pointer;
     color: #000;
     background-color: #ccc;
-    transition: 1.5s;
+    transition: 0.7s;
 }
 
 
@@ -452,17 +464,42 @@ html {
     width: 100%;
 }
 
-.contact-form .form-submit-btn {
-    background-color: #000;
-    color: #fff;
-    border: 1px #000;
-    padding: 10px 16px;
-    float: right;
-}
+/* Map section */
 
+.map-section img {
+    width: 100%;
+}
 
 /* Footer */
 
 #footer {
-
+    padding: 64px 16px;
+    text-align: center;
 }
+
+#footer .socials-list {
+    font-size: 24px;
+}
+
+#footer .socials-list a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+
+#footer .copyright a:hover,
+#footer .socials-list a:hover {
+    color: rgba(0, 0, 0, 0.3);
+    transition: 0.4s;
+}
+
+#footer .copyright {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .copyright a {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+
