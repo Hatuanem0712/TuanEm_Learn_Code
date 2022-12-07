@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Band</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="stylesheet" href="assets/Font/themify-icons/themify-icons.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1496/1496084.png" type="image/x-icon" />
 </head>
@@ -37,6 +38,10 @@
 
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
             </div>
 
             <!-- End: Search buttom -->
@@ -183,6 +188,35 @@
             <p class="copyright">Powered by <a href="">w3.css</a></p>
         </div>
     </div>
+
+    <!-- Đóng/mở Mobile Menu -->
+    <script>
+        var header = document.getElementById ('header');
+        var mobileMenu = document.getElementById ('mobile-menu');
+        var headerHight = header.clientHeight;
+
+        mobileMenu.onclick = function () {
+            var isClosed = header.clientHeight === headerHight;
+            if (isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null ;
+            }
+        }
+
+    // Đóng mở menu khi chọn
+        var menuItems = document.querySelectorAll ('#nav li a [href*="#"]');
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+
+            menuItem.onclick = function () {
+                header.style.height = null ;
+            }
+        }
+
+    </script>
+
+    
 
     <div class="modal js-modal">
         <div class="modal-container js-modal-container">
