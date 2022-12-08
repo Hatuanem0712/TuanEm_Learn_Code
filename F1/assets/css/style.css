@@ -87,7 +87,6 @@ html {
     right: 0;
     height: 46px;
     background-color: #000;
-    overflow: hidden;
 }
 
 #nav, .subnav {
@@ -151,6 +150,13 @@ html {
     padding: 0 21px;
     cursor: pointer;
 }
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
 
 
 #header .search-btn:hover {
@@ -514,6 +520,4 @@ html {
 #footer .copyright a {
     color: rgba(0, 0, 0, 0.6);
 }
-
-
 

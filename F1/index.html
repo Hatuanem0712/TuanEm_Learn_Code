@@ -66,15 +66,15 @@
                     We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <div class="row member-list">
-                    <div class="col col-third member-item text-center">
+                    <div class=" member-item col col-third text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/team/bandmember.jpeg" alt="Name" class="member-img">
                     </div>
-                    <div class="col col-third text-center">
+                    <div class=" member-item col col-third text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/team/bandmember.jpeg" alt="Name" class="member-img">
                     </div>
-                    <div class="col col-third text-center">
+                    <div class=" member-item col col-third text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/img/team/bandmember.jpeg" alt="Name" class="member-img">
                     </div>
@@ -193,10 +193,10 @@
     <script>
         var header = document.getElementById ('header');
         var mobileMenu = document.getElementById ('mobile-menu');
-        var headerHight = header.clientHeight;
+        var headerHeight = header.clientHeight;
 
-        mobileMenu.onclick = function () {
-            var isClosed = header.clientHeight === headerHight;
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHeight;
             if (isClosed) {
                 header.style.height = 'auto';
             } else {
@@ -205,14 +205,20 @@
         }
 
     // Đóng mở menu khi chọn
-        var menuItems = document.querySelectorAll ('#nav li a [href*="#"]');
+        var menuItems = document.querySelectorAll ('#nav li a[href*="#"]');
         for (var i = 0; i < menuItems.length; i++) {
             var menuItem = menuItems[i];
 
-            menuItem.onclick = function () {
-                header.style.height = null ;
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if (isParentMenu) {
+                    event.preventDefault();
+                } else {
+                    header.style.height = null ;
+                }
             }
         }
+
 
     </script>
 

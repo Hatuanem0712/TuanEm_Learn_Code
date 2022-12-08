@@ -1,10 +1,43 @@
 /* Mobile */
 @media (max-width: 740px) {
-    #nav > li {
+    #header {
+        overflow: hidden;
+    }
+
+    #nav  {
         display: block;
     }
+
+    #nav > li {
+        padding: 1px 24px;
+        display: block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 41px;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
     #header .search-btn {
         display: none;
+    }
+
+    #content .member-item {
+        margin-top: 30px;
+        width: 100%;
     }
 
 }
