@@ -39,11 +39,48 @@
         margin-top: 30px;
         width: 100%;
     }
+     
+    #content .member-img {
+        width: 60%;
+    }
 
+    .s-full-width,
+    .s-col-full {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: 20px;
+    }
+
+    .s-mt-8 {
+        margin-top: 8px;
+    }
+    
 }
 
 /* Tablet */
-@media (min-width: 740px) {
+@media (max-width: 1023px) {
+    .btn {
+        padding: 15px 16px ;
+    }
+
+    .contact-form .form-control {
+        padding: 15px;
+    }
+
+    .socials-list {
+        font-size: 48px;
+    }
+
+    #footer .socials-list a {
+        margin: 0 8px;
+    }
+
+    #footer .copyright a {
+        padding: 12px 0;
+        display: inline-block;
+    }
 
 }
 

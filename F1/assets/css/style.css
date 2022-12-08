@@ -38,6 +38,10 @@ html {
     margin-top: 16px !important;
 }
 
+.mt-32 {
+    margin-top: 32px !important;
+}
+
 .row{
     margin-left: -8px;
     margin-right: -8px;
@@ -87,6 +91,7 @@ html {
     right: 0;
     height: 46px;
     background-color: #000;
+    overflow: hidden;
 }
 
 #nav, .subnav {
@@ -227,7 +232,7 @@ html {
     font-size: 30px;
     font-weight: 500;
     text-align: center;
-    letter-spacing: 46px;
+    letter-spacing: 20px;
     margin-top: 25px;
 }
 
@@ -247,7 +252,7 @@ html {
 }
 
 #content .member-list {
-    margin-top: 48px;
+    margin-top: 32px;
 }
 
 #content .member-name {
@@ -301,7 +306,7 @@ html {
 /* Places */
 
 .place-list {
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 .place-img {
