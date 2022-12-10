@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "TuanEm_Learn_Code",
+			"path": "../../Documents/GitHub/TuanEm_Learn_Code"
+		},
+		{
+			"name": "Shopee",
+			"path": "."
+		},
+		{
+			"name": "F1",
+			"path": "../../.Trash/F1"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Shopee"
+	}
+}

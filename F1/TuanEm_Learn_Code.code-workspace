@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "TuanEm_Learn_Code",
+			"path": ".."
+		},
+		{
+			"path": "../../../../Desktop/Catier_CSS"
+		},
+		{
+			"path": "../../../../Desktop/TT"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "TT"
+	}
+}
