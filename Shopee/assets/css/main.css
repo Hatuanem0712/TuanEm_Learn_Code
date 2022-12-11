@@ -11,6 +11,7 @@
 .header__navbar-list {
     padding-left: 0;
     list-style: none;
+    margin-top: 4px;
 }
 
 .header__navbar-item {
@@ -20,12 +21,23 @@
 
 
 .header__navbar-item-link,
-.header__navbar-list {
+.header__navbar-item {
     display: inline-block;
     font-size: 1.4rem;
     color: var(--white-color);
     text-decoration: none ;
     font-weight: 300;
+}
+
+.header__navbar-item-link:hover,
+.header__navbar-item:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header__navbar-icon-link {
+    color: var(--white-color);
+    text-decoration: none;
 }
 
 .header__navbar-item--strong {
@@ -34,7 +46,7 @@
 
 .header__navbar-item--separate:after {
     content: "";
-    display:block;
+    display: block;
     position: absolute;
     border-left: 1px solid #FB9086 ;
     height: 14px;
