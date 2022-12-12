@@ -137,6 +137,7 @@
     cursor: default;
     transform-origin: calc(100% - 20px) top;
     animation: headerNotifyGrowth ease-in 0.2s;
+    will-change: opacity, transform;
     display: none;
 }
 
@@ -220,7 +221,6 @@
 
 .header__notify-info {
     margin-left: 12px;
-
 }
 
 .header__notify-name {
@@ -252,3 +252,4 @@
     font-weight: 400;
     text-align: center;
 }
+
