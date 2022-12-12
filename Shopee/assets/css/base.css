@@ -42,7 +42,15 @@ html {
     to {
         opacity: 1;
     }
+}
 
+@keyframe growth {
+    from {
+        transform: scale(var(--growth-from))
+    }
+    to {
+        transform: scale(var(--growth-to))
+    }
 }
 
 /* modal */
@@ -53,6 +61,7 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
+    animation: fadeIn linear 0.5s ;
 }
 
 .modal__overlay {
@@ -63,9 +72,12 @@ html {
 }
 
 .modal__body {
+    --growth-from: 0.6;
+    --growth-to: 1;
     margin: auto;
     position: relative;
     z-index: 1;
+    animation: growth linear 0.3s;
 }
 /* botton style */
 
@@ -83,6 +95,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style: 1.6rem;
 }
 
 .btn.btn--nomal:hover {
