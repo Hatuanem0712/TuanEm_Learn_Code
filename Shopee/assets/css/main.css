@@ -33,7 +33,7 @@
 .header__navbar-item-link,
 .header__navbar-item {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--white-color);
     text-decoration: none ;
     font-weight: 300;
@@ -100,6 +100,11 @@
 
 .header__logo-img {
     width: 150px;
+}
+
+.header__logo-link {
+    color: transparent;
+    text-decoration: none;
 }
 
 .header__search {
@@ -217,16 +222,19 @@
 /* Notification */
 .header__notify {
     position: absolute;
+    z-index: 1;
     top: 100%;
     right: 0;
     width: 404px;
+    border-radius: 2px;
     border: 1px solid #d3d3d3;
     background-color:  var(--white-color);
     cursor: default;
-    transform-origin: calc(100% - 20px) top;
+    transform-origin: calc(100% - 32px) top;
     animation: headerNotifyGrowth ease-in 0.2s;
     will-change: opacity, transform;
     display: none;
+
 }
 
 .header__notify::before {
@@ -643,4 +651,46 @@
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
