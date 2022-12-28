@@ -22,8 +22,6 @@
         }
         echo '</tr>';
         $index--;
-
-
     }   
     ?>  
 </table>
