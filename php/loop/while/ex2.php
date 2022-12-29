@@ -6,3 +6,4 @@ do{
     $i+=2;
 }while (1/$i>=0.0001);
 echo 'Tong ='.$total.'<br/>';
+
