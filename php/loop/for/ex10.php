@@ -27,16 +27,16 @@ function phanTichSoNguyen($n) {
  
 ?>
 <form action="#" method="post">
- <table>
-  <tr>
-   <td>Nhập số nguyên:</td>
-   <td><input type="text" name="n" value="<?=$n?>" /></td>
-  </tr>
-  <tr>
-   <td></td>
-   <td><input type="submit" value="Phân tích"></td>
-  </tr>
- </table>
+    <table>
+        <tr>
+            <td>Nhập số nguyên:</td>
+            <td><input type="text" name="n" value="<?=$n?>" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Phân tích"></td>
+        </tr>
+    </table>
 </form>
 <br>
 <?php
