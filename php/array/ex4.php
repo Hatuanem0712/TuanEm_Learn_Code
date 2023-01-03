@@ -94,13 +94,38 @@
                 ]
             ]
         ]
+        [
+            'title' => 'Buy now',
+            'link' => '#',
+            'class' => 'action',
+        ]
     ]
-        echo '<pre>';
-        print_r($menuArr);
-        echo '</pre>';
+        // echo '<pre>';
+        // print_r($menuArr);
+        // echo '</pre>';
+        if(!empty($menuArr)){
+            echo '<ul>';
+            foreach ($menuArr as $item) {
+                $class = !empty($item['class'])?' class="'.$item['class'].'"':null;
+                
+                echo '<li'.$class.'><a href="'.$item['link'].'">'.$item['title'].'</a>';
+
+                if (!empty($item['sub'])){
+                    $subMenu = $item['sub'];
+                    echo '<div class="dropdown-content">';
+                    foreach ($subMenu as $sub){
+                        echo '<a href="'.$sub['link'].'">'.$sub['title'].'</a>';
+                    }
+                    echo '</div>';
+                }
+
+                echo '</li>';
+            }
+            echo '</ul>';
+        }
 
     ?>
-    <ul>
+    <!-- <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#news">News</a></li>
         <li class="dropdown">
@@ -111,7 +136,7 @@
                 <a href="#">Link 3</a>
             </div>
         </li>
-    </ul>
+    </ul> -->
 
 </body>
 </html>
