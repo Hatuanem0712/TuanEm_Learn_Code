@@ -56,7 +56,7 @@ $customerArr[] = [
 ];
 
 $customerArr['status'] = 'success';
-$customerArr[] =30;
+$customerArr[] = 30;
 
 echo '<pre>';
 print_r($customerArr);
