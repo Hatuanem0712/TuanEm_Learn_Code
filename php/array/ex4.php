@@ -60,6 +60,13 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        .action a{
+            background: red;
+        }
+        .action {
+            float: right;
+        }
+
 </style>
 </head>
 <body>
@@ -68,7 +75,7 @@
         [
             'title' => 'Home',
             'link' => '#',
-            'class' => '',
+            'class' => 'active',
         ],
         [
             'title' => 'News',
@@ -76,7 +83,7 @@
             'class' => '',
         ],
         [
-            'title' => 'Dropdown',
+            'title' => 'Sản Phẩm',
             'link' => '#',
             'class' => '',
             'sub' => [
@@ -93,13 +100,36 @@
                     'link' => '#'
                 ]
             ]
-        ]
+        ],
+        [
+            'title' => 'Dịch vụ',
+            'link' => '#',
+            'class' => '',
+            'sub' => [
+                [
+                    'title' => 'Link 1',
+                    'link' => '#'
+                ],
+                [
+                    'title' => 'Link 2',
+                    'link' => '#'
+                ],
+                [
+                    'title' => 'Link 3',
+                    'link' => '#'
+                ],
+                [
+                    'title' => 'Link 4',
+                    'link' => '#'
+                ]
+            ]
+        ],
         [
             'title' => 'Buy now',
             'link' => '#',
             'class' => 'action',
         ]
-    ]
+    ];
         // echo '<pre>';
         // print_r($menuArr);
         // echo '</pre>';
@@ -107,6 +137,8 @@
             echo '<ul>';
             foreach ($menuArr as $item) {
                 $class = !empty($item['class'])?' class="'.$item['class'].'"':null;
+                
+                $class = !empty($item['sub'])?' class="dropdown"':$class;
                 
                 echo '<li'.$class.'><a href="'.$item['link'].'">'.$item['title'].'</a>';
 
@@ -122,21 +154,104 @@
                 echo '</li>';
             }
             echo '</ul>';
-        }
+        };
 
     ?>
-    <!-- <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </li>
-    </ul> -->
+
+    <?php
+    $customerArr = [
+        [
+            'name' => 'Tuan Em ',
+            'email' => '12132@gmail.com',
+            'phone' => '1245787451',
+            'address' => 'Ho Chi Minh'
+        ],
+        [
+            'name' => 'Tuan Em 1 ',
+            'email' => '121s32@gmail.com',
+            'phone' => '12457812451',
+            'address' => 'Ha Noi'
+        ],
+        [
+            'name' => 'Tuan Em 2',
+            'email' => '12132a@gmail.com',
+            'phone' => '12457451',
+            'address' => 'Long An'
+        ],
+        [
+            'name' => 'Tuan Em 3',
+            'email' => '1213c2@gmail.com',
+            'phone' => '124451',
+            'address' => 'Ho Chi Minh'
+        ],
+        [
+            'name' => 'Tuan Em 4',
+            'email' => '1213c2@gmail.com',
+            'phone' => '124451',
+            'address' => 'Ho Chi Minh'
+        ],
+        [
+            'name' => 'Tuan Em 5',
+            'email' => '12132a@gmail.com',
+            'phone' => '12457451',
+            'address' => 'Long An'
+        ]
+        ];
+
+        // Kieerm tra trungf email thif xoas
+    if (!empty($customerArr)){
+        $indexDuplicate = [];
+        for($i = 0; $i<count($customerArr) -1; $i++){
+            for($j = $i+1; $j<count($customerArr); $j++){
+                if($customerArr[$i]['email']==$customerArr[$j]['email']){
+                    $indexDuplicate[] = $j;
+                }
+            }
+        }
+
+        if (!empty($indexDuplicate)){
+            foreach ($indexDuplicate as $index) {
+                if(isset($customerArr[$index])){
+                    unset($customerArr[$index]);
+                }
+            }
+        }
+    }
+        
+    ?>
+    <table width="100%" border= "1" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th width="5%">STT</th>
+                <th>Ho ten</th>
+                <th>Email</th>
+                <th>SDT</th>
+                <th>Dia chi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if(!empty($customerArr) && is_array($customerArr)):
+                $count = 0;
+                foreach ($customerArr as $item):
+                    $count ++;
+
+            ?>
+        <tr>
+                <td><?php echo $count; ?></td>
+                <td><?php echo $item['name']; ?></td>
+                <td><?php echo $item['email']; ?></td>
+                <td><?php echo $item['phone']; ?></td>
+                <td><?php echo $item['address']; ?></td>
+            </tr>
+        <?php endforeach; else: ?>   
+        <tr>
+            <td colspan="5" style="text-align: center">Empty</td>
+        </tr>
+        <?php endif; ?>
+        </tbody>
+
+    </table>
 
 </body>
 </html>
